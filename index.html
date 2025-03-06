@@ -12,67 +12,35 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   
   <style>
-    /* Reset default margin, padding, and apply box-sizing */
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-    
-    /* Background styling with an image */
     body { background: url('background5.jpg') no-repeat center center/cover; display: flex; justify-content: center; align-items: center; height: 100vh; }
-    
-    /* Container for profile card */
-    .container { 
-      background: rgba(255, 255, 255, 0.1); 
-      backdrop-filter: blur(10px); 
-      padding: 30px; 
-      border-radius: 15px; 
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); 
-      text-align: center; 
-      color: white; 
-      width: 90%; 
-      max-width: 500px; 
-      transition: transform 0.3s ease-in-out; 
-    }
+    .container { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 30px; border-radius: 15px; box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); text-align: center; color: white; width: 90%; max-width: 500px; }
     .container:hover { transform: scale(1.08); }
-    
-    /* Profile photo styling */
     .profile-photo { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid white; margin-bottom: 15px; }
-    
-    /* Name styling with gradient text effect */
     h1 { font-size: 2rem; margin-bottom: 10px; background: linear-gradient(45deg, #0099ff, #0044cc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    
-    /* Button styling with gradient effects */
+    .buttons { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
     .btn { background: linear-gradient(45deg, #0057b8, #002f6c); color: white; padding: 12px; border: none; border-radius: 25px; font-size: 1.2rem; cursor: pointer; transition: transform 0.3s ease-in-out; }
     .btn:hover { transform: scale(1.1); background: linear-gradient(45deg, #002f6c, #0057b8); }
-    
-    /* Chatbot button styling */
     .chatbot { position: fixed; bottom: 20px; right: 20px; background: #0057b8; color: white; padding: 15px; border-radius: 50%; cursor: pointer; box-shadow: 0 0 10px rgba(0,0,0,0.3); }
-    
-    /* Chatbox styling */
     .chatbox { display: none; position: fixed; bottom: 80px; right: 20px; background: white; color: black; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.3); width: 300px; }
     .chatbox input, .chatbox textarea { width: 100%; padding: 10px; margin: 5px 0; border: 1px solid #ccc; border-radius: 5px; }
     .chatbox button { background: #0057b8; color: white; padding: 10px; border: none; cursor: pointer; width: 100%; border-radius: 5px; }
   </style>
 </head>
 <body>
-  <!-- Main Profile Card -->
   <div class="container">
     <img src="myphoto.jpg" alt="Rohith Reddy Mandava" class="profile-photo">
     <h1>Rohith Reddy Mandava</h1>
     <div class="buttons">
-      <button class="btn" onclick="toggleSection('linkedin')"><i class="fab fa-linkedin"></i> LinkedIn</button>
-      <button class="btn" onclick="toggleSection('resume')"><i class="fas fa-file"></i> Resume</button>
-      <button class="btn" onclick="toggleSection('skills')"><i class="fas fa-laptop-code"></i> Skills</button>
+      <button class="btn" onclick="toggleSection('linkedin')">LinkedIn</button>
+      <button class="btn" onclick="toggleSection('resume')">Resume</button>
+      <button class="btn" onclick="toggleSection('skills')">Skills</button>
     </div>
     <div id="linkedin" class="content"><p>Connect with me on <a href="https://www.linkedin.com/in/rohithreddymandava" target="_blank">LinkedIn</a></p></div>
     <div id="resume" class="content"><p>Download my <a href="Rohith_Reddy_DevOps_Resume.pdf" target="_blank">Resume</a></p></div>
     <div id="skills" class="content"><p><b>Skills:</b> Jenkins, Docker, Kubernetes, Git, GitHub, Shell Scripting</p></div>
   </div>
-  
-  <!-- Chatbot Button -->
-  <div class="chatbot" onclick="toggleChat()">
-    <i class="fas fa-comment"></i>
-  </div>
-  
-  <!-- Chatbot Input Form -->
+  <div class="chatbot" onclick="toggleChat()"><i class="fas fa-comment"></i></div>
   <div class="chatbox" id="chatbox">
     <h3>Contact Me</h3>
     <input type="text" id="name" placeholder="Your Name">
@@ -80,27 +48,21 @@
     <textarea id="message" placeholder="Your Message"></textarea>
     <button onclick="sendMessage()">Send</button>
   </div>
-  
   <script>
-    // Function to toggle section visibility
     function toggleSection(section) {
       document.querySelectorAll('.content').forEach(content => content.style.display = 'none');
       document.getElementById(section).style.display = 'block';
     }
-    
-    // Function to toggle chatbox visibility
     function toggleChat() {
       let chatbox = document.getElementById("chatbox");
       chatbox.style.display = chatbox.style.display === "block" ? "none" : "block";
     }
-    
-    // Function to send message via email
     function sendMessage() {
       let name = document.getElementById("name").value;
       let email = document.getElementById("email").value;
       let message = document.getElementById("message").value;
       if (name && email && message) {
-        window.location.href = `mailto:mandavarohithreddy6@gmail.com?subject=Contact from ${name}&body=${message}%0A%0AReply to: ${email}`;
+        window.open(`mailto:mandavarohithreddy6@gmail.com?subject=Contact from ${name}&body=${message}%0A%0AReply to: ${email}`);
       } else {
         alert("Please fill in all fields.");
       }
