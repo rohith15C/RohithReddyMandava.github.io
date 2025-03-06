@@ -21,7 +21,7 @@
     }
     .content {
       padding: 20px;
-      background-color: rgba(0, 0, 0, 0.7); /* Darkened background for better contrast */
+      background-color: rgba(0, 0, 0, 0.5); /* Soft dark background */
       border-radius: 10px;
       width: 80%;
       max-width: 800px;
@@ -29,7 +29,7 @@
     h1 {
       font-size: 2.5rem;
       margin-bottom: 20px;
-      color: #ffcc00; /* Bright color for your name (golden yellow) */
+      color: #4CAF50; /* Green color for your name */
     }
     .profile-photo {
       width: 150px; /* Set the size of the circular photo */
@@ -37,14 +37,12 @@
       border-radius: 50%; /* This makes the image round */
       object-fit: cover; /* Ensures the image covers the area without distortion */
       margin-bottom: 20px; /* Space between the photo and the rest of the content */
-      border:3px soild #ffcc00;
     }
     .button-container {
       margin-bottom: 20px;
-      text-align:center;
     }
     .button-container button {
-      background-color: #007bff; /* Green color for buttons */
+      background-color: #2196F3; /* Light Blue color for buttons */
       color: white;
       padding: 12px 25px;
       border: none;
@@ -52,48 +50,11 @@
       font-size: 1.2rem;
       cursor: pointer;
       margin: 10px;
-      transition: background-color 0.3s ease, transform 0.2s;
-      box-shadow:3px 3px 10px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
     }
     .button-container button:hover {
-      background-color: #0056b3; /* Darker green on hover */
-      transform:scale(1.05);
+      background-color: #1976D2; /* Darker blue on hover */
     }
-    /* Text Box Styles */
-.text-box {
-    background: #22c55e; /* Bright green */
-    padding: 15px;
-    border-radius: 5px;
-    color: white;
-    font-size: 16px;
-    text-align: center;
-    margin-top: 15px;
-}
-
-/* Background and Page Styling */
-body {
-    background: linear-gradient(to bottom, #0f172a, #1e293b);
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
-
-/* Header Styling */
-h1 {
-    color: #ffcc00; /* Bright gold for emphasis */
-    font-size: 2rem;
-    text-shadow: 2px 2px 5px rgba(255, 204, 0, 0.5);
-}
-
-/* Card-like Profile Box */
-.profile-box {
-    background: rgba(31, 41, 55, 0.9); /* Slightly transparent dark background */
-    padding: 20px;
-    border-radius: 10px;
-    display: inline-block;
-    margin: 20px auto;
-    box-shadow: 3px 3px 10px rgba(255, 204, 0, 0.2);
-  
     .skills, .linkedin, .resume {
       display: none;
       margin-top: 20px;
@@ -102,21 +63,21 @@ h1 {
     }
     /* LinkedIn page background color */
     .linkedin {
-      background-color: #27c807; /* LinkedIn blue */
+      background-color: #0077b5; /* LinkedIn blue */
     }
     /* Resume page background color */
     .resume {
-      background-color: #27c807; /* Light gray for Resume */
+      background-color: #f0f0f0; /* Light gray for Resume */
       color: #333; /* Darker text for readability */
     }
-    /* Skills page background color (non-black) */
+    /* Skills page background color */
     .skills {
-      background-color: #27c807; /* Light yellow background for skills */
+      background-color: #81D4FA; /* Soft blue background for skills */
       color: #333; /* Dark text color */
     }
     .skill {
       padding: 10px;
-      background-color: #ff9800; /* A warm color for skill items */
+      background-color: #4CAF50; /* Green color for skill items */
       border-radius: 5px;
       font-size: 1.1rem;
     }
@@ -124,11 +85,12 @@ h1 {
 </head>
 <body>
   <div class="content">
-    <h1>Rohith Reddy Mandava</h1>
-    
     <!-- Profile Photo (circular) -->
-    <img src="myphoto.jpg" alt="Rohith Reddy Mandava" class="profile-photo">
+    <img src="your-photo.jpg" alt="Rohith Reddy Mandava" class="profile-photo">
     
+    <!-- Your Name -->
+    <h1>Rohith Reddy Mandava</h1>
+
     <div class="button-container">
       <button onclick="showSection('linkedin')">LinkedIn</button>
       <button onclick="showSection('resume')">Resume</button>
