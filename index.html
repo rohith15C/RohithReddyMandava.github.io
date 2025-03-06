@@ -7,8 +7,9 @@
   <title>Rohith Reddy Mandava</title>
   <style>
     body {
-      background-image: url('background.jpg'); /* Your background image */
-      background-size: cover;
+      background-image: url('background.jpg'); /* Add your background image here */
+      background-size: cover; /* Ensure the image covers the entire page */
+      background-position: center; /* Center the image */
       color: white;
       font-family: Arial, sans-serif;
       margin: 0;
@@ -21,28 +22,29 @@
     }
     .content {
       padding: 20px;
-      background-color: rgba(0, 0, 0, 0.5); /* Soft dark background */
+      background-color: rgba(0, 0, 0, 0.6); /* Soft dark background */
       border-radius: 10px;
       width: 80%;
       max-width: 800px;
+      text-align: center;
     }
     h1 {
       font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: #4CAF50; /* Green color for your name */
+      margin-top: 10px; /* Reduced space from the photo */
+      color: #FF4081; /* Vibrant Pink color for your name */
     }
     .profile-photo {
       width: 150px; /* Set the size of the circular photo */
       height: 150px;
       border-radius: 50%; /* This makes the image round */
       object-fit: cover; /* Ensures the image covers the area without distortion */
-      margin-bottom: 20px; /* Space between the photo and the rest of the content */
+      margin-bottom: 10px; /* Reduced gap between photo and name */
     }
     .button-container {
-      margin-bottom: 20px;
+      margin-top: 20px; /* Spacing between buttons and content */
     }
     .button-container button {
-      background-color: #2196F3; /* Light Blue color for buttons */
+      background-color: #00897B; /* Teal color for buttons */
       color: white;
       padding: 12px 25px;
       border: none;
@@ -53,7 +55,7 @@
       transition: background-color 0.3s ease;
     }
     .button-container button:hover {
-      background-color: #1976D2; /* Darker blue on hover */
+      background-color: #004D40; /* Darker teal on hover */
     }
     .skills, .linkedin, .resume {
       display: none;
@@ -64,10 +66,11 @@
     /* LinkedIn page background color */
     .linkedin {
       background-color: #0077b5; /* LinkedIn blue */
+      color: white;
     }
     /* Resume page background color */
     .resume {
-      background-color: #f0f0f0; /* Light gray for Resume */
+      background-color: #E1F5FE; /* Light blue for Resume */
       color: #333; /* Darker text for readability */
     }
     /* Skills page background color */
@@ -80,6 +83,8 @@
       background-color: #4CAF50; /* Green color for skill items */
       border-radius: 5px;
       font-size: 1.1rem;
+      color: white;
+      margin: 5px;
     }
   </style>
 </head>
@@ -126,7 +131,7 @@
       document.querySelector('.resume').style.display = 'none';
       document.querySelector('.skills').style.display = 'none';
 
-      // Show the clicked section and set appropriate background color
+      // Show the clicked section
       if (section === 'linkedin') {
         document.querySelector('.linkedin').style.display = 'block';
       } else if (section === 'resume') {
